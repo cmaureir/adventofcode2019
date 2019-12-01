@@ -1,15 +1,13 @@
-#include <string>
-#include <iostream>
-#include <fstream>
 #include <cassert>
+#include <fstream>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
-int get_fuel(int i) {
-    return (i/3) - 2;
-}
+int get_fuel(int i) { return (i / 3) - 2; }
 
-int get_total_fuel(int i){
+int get_total_fuel(int i) {
     int total_fuel = 0;
     int fuel = get_fuel(i);
     while (fuel >= 0) {
@@ -25,7 +23,7 @@ int main(int argc, char *argv[]) {
 
     // First part
     int total = 0;
-    while(in >> line) {
+    while (in >> line) {
         total += get_fuel(stoi(line));
     }
     cout << total << endl;
@@ -36,11 +34,10 @@ int main(int argc, char *argv[]) {
 
     // Second part
     int real_total = 0;
-    while(in >> line) {
+    while (in >> line) {
         real_total += get_total_fuel(stoi(line));
     }
     cout << real_total << endl;
-
 
     return 0;
 }
